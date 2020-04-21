@@ -1,0 +1,10 @@
+.apt-content {
+	top: 50px;
+	left: 200px;
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	background-color: #ecf0f5;
+	width: calc(100vh - 100px);
+	height: 100vh;
+}

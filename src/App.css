@@ -1,0 +1,19 @@
+.apt-container {
+	display: flex;
+	flex-direction: row;
+	background-color: #ecf0f5;
+	width: 100%;
+	height: 100vh;
+}
+
+.apt-content {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.mybg {
+	width: 100px;
+	height: 90vh;
+	overflow: unset;
+}

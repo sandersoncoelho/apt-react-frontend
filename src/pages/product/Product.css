@@ -1,0 +1,110 @@
+.product-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	margin: 50px;
+}
+
+.label-form {
+	font-family: sans-serif;
+    font-size: 10px;
+    font-weight: 200;
+	color: #6c757d;
+}
+
+.input-form {
+	font-family: Arial;
+    font-size: 10px !important;
+    font-weight: 200;
+	color: #495057;	
+	height: 20px !important;
+	border-color: #3d668e;
+}
+
+.input-form input:active {
+	border-color: green important;
+}
+
+.asdf {
+	width: 400px;
+	fill: #4680ff;
+}
+
+.apt-background{
+	background-color: #4680ff;
+}
+
+h1 {
+	margin: auto;
+	color: white;
+	text-align: center;
+	border-style: dashed;
+}
+
+p {
+	font-family: verdana;
+	font-size: 20px;
+}
+
+.painel, .painelWhite{
+	background-color: MediumSeaGreen;
+	color: white;
+}
+
+h1 {
+	margin: 0 0 50px 0;
+	border-style: solid;
+}
+
+h2 {
+	margin: 20px 0 0 0;
+	border-style: solid;
+}
+
+.searchNewBar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 100%;
+}
+
+.searchNewBar .input-group {
+	width: 50%;
+}
+
+.novo {
+	margin-left: 15px;
+}
+
+.optionsCol {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-end;
+	width: 100%;
+}
+
+.center {
+	text-align: center;
+}
+
+.carouselContent {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.carouselPhoto {
+	border: 1px solid #ced4da;
+    border-radius: .25rem;
+    width: 172px;
+    margin-left: 24px;
+}
+
+.carouselImage {
+	border-radius: .25rem;
+}

@@ -1,0 +1,40 @@
+.menu {
+	top: 50px;
+	left: 0px;
+	position: fixed;
+	background-color: #C3D4F3;
+	width: 200px;
+	min-height: 100vh;
+}
+
+.menuItem {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	height: 60px;
+	width: 100%;
+}
+
+.menuItem:hover {
+	background-color: #6F8CAB;
+	cursor: pointer;
+}
+
+.menuItem:hover .menuLabel, .menuItem.hover .menuLabel {
+	background-color: #6F8CAB;
+	color: #E0E0E0;
+}
+
+.menuLabel {
+	font-size: 16px;
+	font-weight: bold;
+	color: #505050;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.menuLabel:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
