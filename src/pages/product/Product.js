@@ -1,19 +1,19 @@
 import React from 'react';
 import './Product.css';
-import ReactTable from 'react-table';
-import 'react-table/react-table.css';
 import bsCustomFileInput from 'bs-custom-file-input'
-import { Form, Container, Row, Col, Button, Table, Pagination, Popover, OverlayTrigger, InputGroup, FormControl } from 'react-bootstrap';
+import { Form, Container, Row, Col, Button, Table, Popover, OverlayTrigger, InputGroup, FormControl } from 'react-bootstrap';
 import Img from 'react-image';
 
 import { Modal } from 'react-bootstrap';
 import ProductModal from './ProductModal';
+import Pagination from '../../commons/Pagination';
 
 export default class Product extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			show: false
+			show: false,
+			current: 1
 		};
 	}
 
@@ -25,47 +25,13 @@ export default class Product extends React.Component {
 		this.setState({show: false});
 	}
 
+	onSelectPaginationItem(i) {
+		this.setState({current: i});
+	}
+
 	render() {
-		const data = [{
-			name: 'Sanderson Coelho',
-			age: 26,
-			friend: {
-			name: 'Daniely Cristina',
-			age: 23,
-			}
-		}, {
-			name: 'Samara Coelho',
-			age: 26,
-			friend: {
-			name: 'Saymo Coelho',
-			age: 23,
-			}
-		}, {
-			name: 'Gloria Monteiro',
-			age: 26,
-			friend: {
-			name: 'Juvenal Coelho',
-			age: 23,
-			}
-		}];
 
-		const columns = [{
-			Header: 'Name',
-			accessor: 'name' // String-based value accessors!
-		}, {
-			Header: 'Age',
-			accessor: 'age',
-			Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-		}, {
-			id: 'friendName', // Required because our accessor is not a string
-			Header: 'Friend Name',
-			accessor: d => d.friend.name // Custom value accessors!
-		}, {
-			Header: props => <span>Friend Age</span>, // Custom header components!
-			accessor: 'friend.age'
-		}];
-
-let active = 2;
+/*let active = 1;
 let items = [];
 for (let number = 1; number <= 5; number++) {
   items.push(
@@ -73,7 +39,7 @@ for (let number = 1; number <= 5; number++) {
       {number}
     </Pagination.Item>,
   );
-}
+}*/
 
 const popover = (
   <Popover id="popover-basic">
@@ -94,20 +60,19 @@ const Example = () => (
 
 		return (
 			<div className="product-content">
- 
-<div className="searchNewBar">
-<InputGroup>
-	<FormControl
-	placeholder="Pesquise um produto"
-	aria-label="Recipient's username"
-	aria-describedby="basic-addon2"
-	/>
-	<InputGroup.Append>
-		<Button><Img src={require("../../assets/search.svg")}/></Button>
-	</InputGroup.Append>
-</InputGroup>
-<Button onClick={() => this.handleOpen()}>Novo</Button>
-</div><br/>
+				<div className="searchNewBar">
+					<InputGroup>
+						<FormControl
+						placeholder="Pesquise um produto"
+						aria-label="Recipient's username"
+						aria-describedby="basic-addon2"
+						/>
+						<InputGroup.Append>
+							<Button><Img src={require("../../assets/search.svg")}/></Button>
+						</InputGroup.Append>
+					</InputGroup>
+					<Button onClick={() => this.handleOpen()}>Novo</Button>
+				</div><br/>
 
 <Table striped bordered hover>
   <thead>
@@ -150,7 +115,7 @@ const Example = () => (
     </tr>
   </tbody>
 </Table>
-<Pagination>{items}</Pagination>
+<Pagination page="5" current={this.state.current} onSelectPaginationItem={i => this.onSelectPaginationItem(i)}/>
 <ProductModal show={this.state.show} handleClose={() => this.handleClose()}/>
 </div>
 			);
