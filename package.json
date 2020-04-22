@@ -10,7 +10,7 @@
     "react-dom": "^16.10.1",
     "react-image": "^2.4.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "0.9.5",
+    "react-scripts": "^3.4.1",
     "react-table": "^6.10.3",
     "styled-components": "^4.4.0"
   },
@@ -20,5 +20,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
