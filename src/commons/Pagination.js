@@ -2,12 +2,12 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
 const PaginationItems = (props) => {
-	const {page, current, onSelectPaginationItem} = props;
+	const {totalItems, pageSize, currentPage, search} = props;
 	let items = [];
 
-	for (let number = 1; number <= page; number++) {
+	for (let number = 1; number <= 5; number++) {
 		items.push(
-			<Pagination.Item key={number} active={number == current} onClick={() => onSelectPaginationItem(number)}>
+			<Pagination.Item key={number} active={number == currentPage} onClick={() => search()}>
 				{number}
 			</Pagination.Item>
 		);
