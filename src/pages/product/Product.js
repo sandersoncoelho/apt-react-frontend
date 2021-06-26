@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Product.css';
 import bsCustomFileInput from 'bs-custom-file-input'
 import { Form, Container, Row, Col, Button, Table, Popover, OverlayTrigger, InputGroup, FormControl } from 'react-bootstrap';
@@ -8,28 +8,41 @@ import { Modal } from 'react-bootstrap';
 import ProductModal from './ProductModal';
 import Pagination from '../../commons/Pagination';
 
-export default class Product extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			show: false,
-			current: 1
-		};
-	}
+export default () => {
+  
+  const [showProductModal, setShowProductModal] = useState(false);
+  const [current, setCurrent] = useState(1);
 
-	handleOpen() {
-		this.setState({show: true});
-	}
+	const handleOpen = () => {
+		setShowProductModal(true);
+	};
 
-	handleClose() {
-		this.setState({show: false});
-	}
+	const handleClose = () => {
+		setShowProductModal(false);
+	};
 
-	onSelectPaginationItem(i) {
-		this.setState({current: i});
-	}
+	const onSelectPaginationItem = (i) => {
+		setCurrent(i);
+	};
 
-	render() {
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Popover right</Popover.Title>
+      <Popover.Content>
+        And here's some <strong>amazing</strong> content. It's very engaging.
+        right?
+      </Popover.Content>
+    </Popover>
+  );
+  
+  const Example = () => (
+    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+      
+      <a>Pesquise</a>
+    </OverlayTrigger>
+  );
+
+	
 
 /*let active = 1;
 let items = [];
@@ -41,25 +54,11 @@ for (let number = 1; number <= 5; number++) {
   );
 }*/
 
-const popover = (
-  <Popover id="popover-basic">
-    <Popover.Title as="h3">Popover right</Popover.Title>
-    <Popover.Content>
-      And here's some <strong>amazing</strong> content. It's very engaging.
-      right?
-    </Popover.Content>
-  </Popover>
-);
 
-const Example = () => (
-  <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-    
-    <a>Pesquise</a>
-  </OverlayTrigger>
-);
 
 		return (
 			<div className="product-content">
+        <Example/>
 				<div className="searchNewBar">
 					<InputGroup>
 						<FormControl
@@ -71,7 +70,7 @@ const Example = () => (
 							<Button><Img src={require("../../assets/search.svg")}/></Button>
 						</InputGroup.Append>
 					</InputGroup>
-					<Button onClick={() => this.handleOpen()}>Novo</Button>
+					<Button onClick={handleOpen}>Novo</Button>
 				</div><br/>
 
 <Table striped bordered hover>
@@ -115,9 +114,8 @@ const Example = () => (
     </tr>
   </tbody>
 </Table>
-<Pagination page="5" current={this.state.current} onSelectPaginationItem={i => this.onSelectPaginationItem(i)}/>
-<ProductModal show={this.state.show} handleClose={() => this.handleClose()}/>
+<Pagination page="5" current={current} onSelectPaginationItem={i => onSelectPaginationItem(i)}/>
+<ProductModal show={showProductModal} handleClose={handleClose}/>
 </div>
 			);
-	}
 }
