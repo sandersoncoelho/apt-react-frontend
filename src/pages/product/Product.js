@@ -1,14 +1,14 @@
-import React, { useState, useMemo } from 'react';
-import { useTable } from 'react-table';
+import React, { useState } from 'react';
 import './Product.css';
 import bsCustomFileInput from 'bs-custom-file-input'
-import { Form, Container, Row, Col, Button, Table, Popover, OverlayTrigger, InputGroup, FormControl } from 'react-bootstrap';
+import { Form, Container, Row, Col, Button, Popover, OverlayTrigger, InputGroup, FormControl } from 'react-bootstrap';
 import Img from 'react-image';
 
 import { Modal } from 'react-bootstrap';
 import ProductModal from './ProductModal';
 import Pagination from '../../commons/Pagination';
 import { get } from '../../service/ProductService';
+import Table from '../../components/Table/index';
 
 export default () => {
   
@@ -19,45 +19,9 @@ export default () => {
 	const [list, setList] = useState([]);
 	const [body, setBody] = useState([]);
 
-	const data = useMemo(
-		() => [
-			{
-				col1: 'Hello',
-				col2: 'World',
-			},
-			{
-				col1: 'react-table',
-				col2: 'rocks',
-			},
-			{
-				col1: 'whatever',
-				col2: 'you want',
-			},
-		],
-		[]
-	);
+	
 
-	const columns = useMemo(
-		() => [
-			{
-				Header: 'Column 1',
-				accessor: 'col1', // accessor is the "key" in the data
-			},
-			{
-				Header: 'Column 2',
-				accessor: 'col2',
-			},
-		],
-		[]
-	);
-
-	const {
-		getTableProps,
-		getTableBodyProps,
-		headerGroups,
-		rows,
-		prepareRow,
-	} = useTable({ columns, data })
+	
 
   const search = (currentPage) => {
     console.log(`currentPage: ${currentPage}`);
@@ -144,50 +108,7 @@ for (let number = 1; number <= 5; number++) {
 				</InputGroup>
 				<Button onClick={handleOpen}>Novo</Button>
 			</div><br/>
-			<table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
-       <thead>
-         {headerGroups.map(headerGroup => (
-           <tr {...headerGroup.getHeaderGroupProps()}>
-             {headerGroup.headers.map(column => (
-               <th
-                 {...column.getHeaderProps()}
-                 style={{
-                   borderBottom: 'solid 3px red',
-                   background: 'aliceblue',
-                   color: 'black',
-                   fontWeight: 'bold',
-                 }}
-               >
-                 {column.render('Header')}
-               </th>
-             ))}
-           </tr>
-         ))}
-       </thead>
-       <tbody {...getTableBodyProps()}>
-         {rows.map(row => {
-           prepareRow(row)
-           return (
-             <tr {...row.getRowProps()}>
-               {row.cells.map(cell => {
-                 return (
-                   <td
-                     {...cell.getCellProps()}
-                     style={{
-                       padding: '10px',
-                       border: 'solid 1px gray',
-                       background: 'papayawhip',
-                     }}
-                   >
-                     {cell.render('Cell')}
-                   </td>
-                 )
-               })}
-             </tr>
-           )
-         })}
-       </tbody>
-     </table>
+			<Table/>
 			{/* <Table striped bordered hover>
 				<thead>
 					<tr>
