@@ -67,13 +67,8 @@ const Table = () => {
              <tr {...row.getRowProps()}>
                {row.cells.map(cell => {
                  return (
-                   <td
+                   <td className='apt-cell'
                      {...cell.getCellProps()}
-                     style={{
-                       padding: '10px',
-                       border: 'solid 1px gray',
-                       background: 'papayawhip',
-                     }}
                    >
                      {cell.render('Cell')}
                    </td>

@@ -18,7 +18,7 @@ export default () => {
 			<MenuItem to="/working" label="Obras"/>
 			<MenuItem to="/product" label="Produtos"/>
 			<MenuItem to="/store" label="Lojas"/>
-			<MenuItem to="/working" label="Despesa Material"/>
+			<MenuItem to="/material-costs" label="Despesa Material"/>
 			<MenuItem to="/working" label="Despesa Serviço"/>
 			<MenuItem to="/working" label="Receita"/>
 			<MenuItem to="/working" label="Balancete"/>

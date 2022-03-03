@@ -9,4 +9,23 @@
 .apt-th {
   color: rgb(247, 242, 242);
   background-color: #337DFF;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: left;
+  padding: 10px 16px; 
+}
+
+.apt-cell {
+  font-size: 0.75rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  line-height: 1.15;
+  padding: 10px 16px;
+  max-width: 300px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

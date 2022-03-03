@@ -2,9 +2,14 @@
 	top: 50px;
 	left: 200px;
 	position: fixed;
+
+	width: 50%;
+	height: 80vh;
+
 	display: flex;
 	flex-direction: row;
 	background-color: #ecf0f5;
-	width: calc(100vh - 100px);
-	height: 100vh;
+	
+	
+	overflow-y: scroll;
 }
