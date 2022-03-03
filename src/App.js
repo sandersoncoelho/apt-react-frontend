@@ -6,12 +6,10 @@ import Menu from './commons/Menu';
 import Content from './commons/Content';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 
 const Background = styled.div`
 	background-color: #FFFFFF;
-    width: 100%;
-	height: 100vh;
+  width: 100%;
 `;
 
 const Header = styled.div`
