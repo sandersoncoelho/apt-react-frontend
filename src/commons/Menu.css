@@ -1,10 +1,8 @@
 .menu {
-	top: 50px;
-	left: 0px;
-	position: fixed;
 	background-color: #C3D4F3;
 	width: 200px;
-	min-height: 100vh;
+	margin: 8px;
+	border-radius: 12px;
 }
 
 .menuItem {

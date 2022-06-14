@@ -1,7 +1,16 @@
 import React from 'react'
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+  useRef,
+ } from 'react'
+import {
+  useTable,
+  usePagination,
+} from 'react-table'
 import styled from 'styled-components'
-import { useTable, usePagination } from 'react-table'
-
 import makeData from './makeData'
 
 const Styles = styled.div`
@@ -78,7 +87,7 @@ function Table({
   )
 
   // Listen for changes in pagination and use the state to fetch our new data
-  React.useEffect(() => {
+  useEffect(() => {
     fetchData({ pageIndex, pageSize })
   }, [fetchData, pageIndex, pageSize])
 
@@ -198,8 +207,8 @@ function Table({
 // Let's simulate a large dataset on the server (outside of our component)
 const serverData = makeData(10000)
 
-function MaterialCosts() {
-  const columns = React.useMemo(
+export default () => {
+  const columns = useMemo(
     () => [
       {
         Header: 'Name',
@@ -240,12 +249,12 @@ function MaterialCosts() {
   )
 
   // We'll start our table without any data
-  const [data, setData] = React.useState([])
-  const [loading, setLoading] = React.useState(false)
-  const [pageCount, setPageCount] = React.useState(0)
-  const fetchIdRef = React.useRef(0)
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [pageCount, setPageCount] = useState(0)
+  const fetchIdRef = useRef(0)
 
-  const fetchData = React.useCallback(({ pageSize, pageIndex }) => {
+  const fetchData = useCallback(({ pageSize, pageIndex }) => {
     // This will get called when the table needs new data
     // You could fetch your data from literally anywhere,
     // even a server. But for this example, we'll just fake it.
@@ -284,6 +293,4 @@ function MaterialCosts() {
       />
     </Styles>
   )
-}
-
-export default MaterialCosts
+};

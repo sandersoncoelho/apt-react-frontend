@@ -1,9 +1,6 @@
 .apt-content {
-	top: 50px;
-	left: 200px;
-	position: fixed;
 
-	width: 50%;
+	width: 100%;
 	height: 80vh;
 
 	display: flex;

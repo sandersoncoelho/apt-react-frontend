@@ -6,31 +6,30 @@ import Menu from './commons/Menu';
 import Content from './commons/Content';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const Background = styled.div`
-	background-color: #FFFFFF;
-  width: 100%;
-`;
+import './App.css';
 
 const Header = styled.div`
-	top: 0px;
-	left: 0px;
-	position: absolute;
 	background-color: #337DFF;
-	width: 100%;
+	
 	height: 50px;
+	border-radius: 12px;
+	margin: 8px;
 `;
 
 export default class Apt extends React.Component {
 	render() {
 		return (
-			<Background>
+			<>
 				<Router>
-					<Header></Header>
-					<Menu></Menu>
-					<Content></Content>
+					<div className='horizontalLayout'>
+						<Menu></Menu>
+						<div className='verticalLayout'>
+							<Header></Header>
+							<Content></Content>
+						</div>
+					</div>
 				</Router>
-			</Background>
+			</>
 		);
 	}
 }
