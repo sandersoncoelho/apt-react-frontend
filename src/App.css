@@ -1,7 +1,6 @@
 .horizontalLayout {
   display: flex;
   flex-flow: row, nowrap;
-  background-color: green;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -11,5 +10,4 @@
   display: flex;
   flex-flow: column;
   width: 100%;
-  background-color: orange;
 }

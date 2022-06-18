@@ -15,6 +15,7 @@ const MenuItem = (props) => {
 export default () => {
 	return(
 		<div className="menu">
+			<div className="items">
 			<MenuItem to="/working" label="Obras"/>
 			<MenuItem to="/product" label="Produtos"/>
 			<MenuItem to="/store" label="Lojas"/>
@@ -22,6 +23,7 @@ export default () => {
 			<MenuItem to="/working" label="Despesa Serviço"/>
 			<MenuItem to="/working" label="Receita"/>
 			<MenuItem to="/working" label="Balancete"/>
+			</div>
 		</div>
 	);
 };

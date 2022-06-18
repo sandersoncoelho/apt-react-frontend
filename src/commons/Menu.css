@@ -1,8 +1,13 @@
 .menu {
-	background-color: #C3D4F3;
+	background-color: #337DFF;
 	width: 200px;
 	margin: 8px;
 	border-radius: 12px;
+}
+
+.items {
+	margin-top: 60px;
+	margin-left: 12px;
 }
 
 .menuItem {
@@ -15,19 +20,31 @@
 }
 
 .menuItem:hover {
-	background-color: #6F8CAB;
+	background-color: #FFFFFF;
 	cursor: pointer;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
 }
 
 .menuItem:hover .menuLabel, .menuItem.hover .menuLabel {
-	background-color: #6F8CAB;
-	color: #E0E0E0;
+	background-color: #FFFFFF;
+	color: #337DFF;
+}
+
+.menuItem::selection {
+	background-color: #FFFFFF;
+	color: #337DFF;
+}
+
+.menuItem:active {
+	background-color: #19b43a;
+	color: #337DFF;
 }
 
 .menuLabel {
 	font-size: 16px;
 	font-weight: bold;
-	color: #505050;
+	color: #FAFAFA;
 	margin-left: 10px;
 	margin-right: 10px;
 }
