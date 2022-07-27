@@ -1,4 +1,4 @@
-.menu {
+.menuContainer {
 	background-color: #337DFF;
 	width: 200px;
 	margin: 8px;
@@ -36,9 +36,11 @@
 	color: #337DFF;
 }
 
-.menuItem:active {
+.menuItemActive {
 	background-color: #19b43a;
 	color: #337DFF;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
 }
 
 .menuLabel {
