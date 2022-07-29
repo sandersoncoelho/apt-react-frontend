@@ -9,6 +9,7 @@ import ProductModal from './ProductModal';
 import Pagination from '../../commons/Pagination';
 import { get } from '../../service/ProductService';
 import Table from '../../components/Table/index';
+import * as S from './styles';
 
 export default () => {
   
@@ -109,6 +110,14 @@ for (let number = 1; number <= 5; number++) {
 				<Button onClick={handleOpen}>Novo</Button>
 			</div><br/>
 			<Table/>
+			<S.Input defaultValue="@probablyup" type="text" />
+    <S.Input defaultValue="@geelen" type="text" inputColor="rebeccapurple" />
+			<S.Link>Unstyled, boring Link</S.Link>
+			<S.StyledLink>Styled, exciting Link</S.StyledLink>
+			<S.StyledButton>teste</S.StyledButton>
+			<S.TomatoButton>tsetete</S.TomatoButton>
+			<S.ReversedButton>estou testando novamente</S.ReversedButton>
+			<S.Wrapper><S.StyledTitle>TESTESTE</S.StyledTitle></S.Wrapper>
 			{/* <Table striped bordered hover>
 				<thead>
 					<tr>

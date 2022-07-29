@@ -21,10 +21,10 @@ const Menu = () => {
 
 const MenuItem = (props) => {
 	let history = useHistory();
-//() => history.push(props.to)
+
 	const styles = props.active ? "menuItem menuItemActive" : "menuItem";
 	return (
-		<div className={styles} onClick={props.onClick}>
+		<div className={styles} onClick={() => history.push(props.to)}>
 			<span className="menuLabel">{props.label}</span>
 		</div>
 	);
