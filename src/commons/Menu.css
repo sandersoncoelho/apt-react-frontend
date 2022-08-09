@@ -26,12 +26,7 @@
 	border-bottom-left-radius: 12px;
 }
 
-.menuItem:hover .menuLabel, .menuItem.hover .menuLabel {
-	background-color: #FFFFFF;
-	color: #337DFF;
-}
-
-.menuItem::selection {
+.menuItem:hover .menuLabel {
 	background-color: #FFFFFF;
 	color: #337DFF;
 }
