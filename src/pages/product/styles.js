@@ -70,3 +70,19 @@ export const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
     border: 1px solid; // <Thing> inside another element labeled ".something-else"
   }
 `;
+
+export const CardContainer = styled.div`
+  min-width: 200px;
+  min-height: 200px;
+  background-color: white;
+  /* border: 1px solid #4680ff; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    min-width: 210px;
+    min-height: 210px;
+  }
+`;

@@ -115,6 +115,12 @@ for (let number = 1; number <= 5; number++) {
       </div>
       <br />
       <Table />
+      <S.CardContainer>
+        <span>Tijolo</span>
+        <span>Tijolo de 8 furos</span>
+      </S.CardContainer>
+
+      {/*
       <S.Thing>Hello world!</S.Thing>
       <S.Thing>How ya doing?</S.Thing>
       <S.Thing className="something">The sun is shining...</S.Thing>
@@ -134,7 +140,8 @@ for (let number = 1; number <= 5; number++) {
       <S.Wrapper>
         <S.StyledTitle>TESTESTE</S.StyledTitle>
       </S.Wrapper>
-      {/* <Table striped bordered hover>
+      
+      <Table striped bordered hover>
 				<thead>
 					<tr>
 						<th>Produto</th>

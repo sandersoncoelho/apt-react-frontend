@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Menu.css";
 import * as S from "./styles";
 
+const menuData = [
+  { to: "/working", label: "Obras" },
+  { to: "/product", label: "Produtos" },
+  { to: "/store", label: "Lojas" },
+  { to: "/material-costs", label: "Despesa Material" },
+  { to: "/working", label: "Despesa Serviço" },
+  { to: "/working", label: "Receita" },
+  { to: "/working", label: "Balancete" },
+];
+
 const Menu = () => {
+  const [currentMenuItem, setCurrentMenuItem] = useState();
   const onClickMenuItem = () => {
     console.log(this);
   };
+
+  useEffect(() => {
+    console.log("tese123");
+  }, [currentMenuItem]);
+
   return (
     <S.Menu>
       <MenuItem to="/working" label="Obras" active={false} />
