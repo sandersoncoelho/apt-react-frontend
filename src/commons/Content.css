@@ -1,12 +1,12 @@
 .apt-content {
 
-	width: 100%;
+	/* width: 100%; */
 	height: 80vh;
 
 	display: flex;
 	flex-direction: row;
-	background-color: #ecf0f5;
+	background-color: olive;
 	
 	
-	overflow-y: scroll;
+	overflow-y: hidden;
 }

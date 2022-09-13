@@ -72,17 +72,46 @@ export const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
 `;
 
 export const CardContainer = styled.div`
-  min-width: 200px;
-  min-height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-x: auto;
+  background-color: green;
+`;
+
+export const Card = styled.div`
+  min-width: 150px;
+  min-height: 150px;
   background-color: white;
-  /* border: 1px solid #4680ff; */
+  border: 1px solid #ced4da;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  justify-content: space-evenly;
+  padding: 8px;
 
   &:hover {
-    min-width: 210px;
-    min-height: 210px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
+`;
+
+export const CardTitle = styled.h2`
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #495057;
+  border: 0px;
+  text-align: center;
+  vertical-align: middle;
+`;
+
+export const CardDescription = styled.span`
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #495057;
+  border: 0px;
+  text-align: center;
 `;

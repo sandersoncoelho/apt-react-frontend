@@ -20,6 +20,7 @@ import Pagination from "../../commons/Pagination";
 import { get } from "../../service/ProductService";
 import Table from "../../components/Table/index";
 import * as S from "./styles";
+import { products } from "./ProductRepository";
 
 export default () => {
   const [showProductModal, setShowProductModal] = useState(false);
@@ -96,6 +97,25 @@ for (let number = 1; number <= 5; number++) {
     }
   };
 
+  const renderCardContainer = () => {
+    return (
+      <S.CardContainer>
+        {products.map((item) => (
+          <S.Card>
+            <S.CardTitle>{item.name}</S.CardTitle>
+            <img
+              src={item.image}
+              width={100}
+              height={100}
+              className="carouselImage"
+            />
+            <S.CardDescription>{item.description}</S.CardDescription>
+          </S.Card>
+        ))}
+      </S.CardContainer>
+    );
+  };
+
   return (
     <div className="product-content">
       <div className="searchNewBar">
@@ -114,13 +134,11 @@ for (let number = 1; number <= 5; number++) {
         <Button onClick={handleOpen}>Novo</Button>
       </div>
       <br />
-      <Table />
-      <S.CardContainer>
-        <span>Tijolo</span>
-        <span>Tijolo de 8 furos</span>
-      </S.CardContainer>
+      {/* <Table /> */}
 
-      {/*
+      {
+        renderCardContainer()
+        /*
       <S.Thing>Hello world!</S.Thing>
       <S.Thing>How ya doing?</S.Thing>
       <S.Thing className="something">The sun is shining...</S.Thing>
@@ -159,7 +177,8 @@ for (let number = 1; number <= 5; number++) {
 				pageSize={pageSize}
 				currentPage={currentPage}
 				search={() => search()}
-			/> */}
+			/> */
+      }
 
       <ProductModal show={showProductModal} handleClose={handleClose} />
     </div>
