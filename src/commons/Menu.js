@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Menu.css";
 import * as S from "./styles";
 
@@ -37,11 +37,11 @@ const Menu = () => {
 };
 
 const MenuItem = (props) => {
-  let history = useHistory();
+  const navigate = () => {}; //useNavigate();
 
   const styles = props.active ? "menuItem menuItemActive" : "menuItem";
   return (
-    <S.MenuItem onClick={() => history.push(props.to)}>
+    <S.MenuItem onClick={() => navigate(props.to)}>
       <S.MenuLabel>{props.label}</S.MenuLabel>
     </S.MenuItem>
   );

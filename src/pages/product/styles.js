@@ -72,6 +72,7 @@ export const Thing = styled.div.attrs((/* props */) => ({ tabIndex: 0 }))`
 `;
 
 export const CardContainer = styled.div`
+  padding-left: 5px;
   width: 100%;
   display: flex;
   flex-direction: row;

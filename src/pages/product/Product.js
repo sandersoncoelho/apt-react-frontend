@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import { useState } from "react";
 import "./Product.css";
 import bsCustomFileInput from "bs-custom-file-input";
 import {
@@ -11,6 +11,7 @@ import {
   OverlayTrigger,
   InputGroup,
   FormControl,
+  Image,
 } from "react-bootstrap";
 import Img from "react-image";
 
@@ -21,46 +22,49 @@ import { get } from "../../service/ProductService";
 import Table from "../../components/Table/index";
 import * as S from "./styles";
 import { products } from "./ProductRepository";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import { ReactSVG } from "react-svg";
 
-export default () => {
-  const [showProductModal, setShowProductModal] = useState(false);
-  const [totalItems, setTotalItems] = useState(1000);
-  const [pageSize, setPageSize] = useState(50);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [list, setList] = useState([]);
-  const [body, setBody] = useState([]);
+const Product = () => {
+  // const [showProductModal, setShowProductModal] = useState(false);
+  // const [totalItems, setTotalItems] = useState(1000);
+  // const [pageSize, setPageSize] = useState(50);
+  // const [currentPage, setCurrentPage] = useState(0);
+  // const [list, setList] = useState([]);
+  // const [body, setBody] = useState([]);
 
-  const search = (currentPage) => {
-    console.log(`currentPage: ${currentPage}`);
-    return [
-      { name: "Tijolo", description: "Tijolo 8 furos", fotos: "@qwer, @wert" },
-      { name: "Cimento", description: "Cimento Nassau", fotos: "@asdf, @zxcv" },
-    ];
-  };
+  // const search = (currentPage) => {
+  //   console.log(`currentPage: ${currentPage}`);
+  //   return [
+  //     { name: "Tijolo", description: "Tijolo 8 furos", fotos: "@qwer, @wert" },
+  //     { name: "Cimento", description: "Cimento Nassau", fotos: "@asdf, @zxcv" },
+  //   ];
+  // };
 
-  const handleOpen = () => {
-    setShowProductModal(true);
-  };
+  // const handleOpen = () => {
+  //   setShowProductModal(true);
+  // };
 
-  const handleClose = () => {
-    setShowProductModal(false);
-  };
+  // const handleClose = () => {
+  //   setShowProductModal(false);
+  // };
 
-  const popover = (
-    <Popover id="popover-basic">
-      <Popover.Title as="h3">Popover right</Popover.Title>
-      <Popover.Content>
-        And here's some <strong>amazing</strong> content. It's very engaging.
-        right?
-      </Popover.Content>
-    </Popover>
-  );
+  // const popover = (
+  //   <Popover id="popover-basic">
+  //     <Popover.Title as="h3">Popover right</Popover.Title>
+  //     <Popover.Content>
+  //       And here's some <strong>amazing</strong> content. It's very engaging.
+  //       right?
+  //     </Popover.Content>
+  //   </Popover>
+  // );
 
-  const Example = () => (
-    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-      <a>Pesquise</a>
-    </OverlayTrigger>
-  );
+  // const Example = () => (
+  //   <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+  //     <a>Pesquise</a>
+  //   </OverlayTrigger>
+  // );
 
   /*let active = 1;
 let items = [];
@@ -76,26 +80,26 @@ for (let number = 1; number <= 5; number++) {
 
   // }, [list]);
 
-  const makeSearch = async () => {
-    setList(search(0));
-    console.log(list);
+  // const makeSearch = async () => {
+  //   setList(search(0));
+  //   console.log(list);
 
-    for (let i = 0; i < list.length; i++) {
-      body.push(
-        <tr key={i}>
-          <td>{list[i].name}</td>
-          <td>{list[i].description}</td>
-          <td>{list[i].fotos}</td>
-          <td>
-            <div className="optionsCol">
-              <Img src={require("../../assets/trash.svg")} />
-              <Img src={require("../../assets/folder.svg")} />
-            </div>
-          </td>
-        </tr>
-      );
-    }
-  };
+  //   for (let i = 0; i < list.length; i++) {
+  //     body.push(
+  //       <tr key={i}>
+  //         <td>{list[i].name}</td>
+  //         <td>{list[i].description}</td>
+  //         <td>{list[i].fotos}</td>
+  //         <td>
+  //           <div className="optionsCol">
+  //             <Img src={require("../../assets/trash.svg")} />
+  //             <Img src={require("../../assets/folder.svg")} />
+  //           </div>
+  //         </td>
+  //       </tr>
+  //     );
+  //   }
+  // };
 
   const renderCardContainer = () => {
     return (
@@ -125,17 +129,17 @@ for (let number = 1; number <= 5; number++) {
             aria-label="Recipient's username"
             aria-describedby="basic-addon2"
           />
-          <InputGroup.Append>
-            <Button>
-              <Img src={require("../../assets/search.svg")} />
-            </Button>
-          </InputGroup.Append>
+          {/* <InputGroup.Append> */}
+          <Button>
+            {/* <Img src={require("../../assets/search.svg")} /> */}
+            <ReactSVG src="assets/search.svg" />
+          </Button>
+          {/* </InputGroup.Append> */}
         </InputGroup>
-        <Button onClick={handleOpen}>Novo</Button>
+        <Button onClick={() => {}}>Novo</Button>
       </div>
       <br />
       {/* <Table /> */}
-
       {
         renderCardContainer()
         /*
@@ -179,8 +183,29 @@ for (let number = 1; number <= 5; number++) {
 				search={() => search()}
 			/> */
       }
-
-      <ProductModal show={showProductModal} handleClose={handleClose} />
+      {/* <ProductModal show={showProductModal} handleClose={handleClose} /> */}
+      {/* <Modal
+        show={showProductModal}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          I will not close if you click outside me. Don't even try to press
+          escape key.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Understood</Button>
+        </Modal.Footer>
+      </Modal> */}
     </div>
   );
 };
+
+export default Product;
