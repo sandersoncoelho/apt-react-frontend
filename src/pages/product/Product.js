@@ -27,7 +27,7 @@ import { useState } from "react";
 import { ReactSVG } from "react-svg";
 
 const Product = () => {
-  // const [showProductModal, setShowProductModal] = useState(false);
+  const [showProductModal, setShowProductModal] = useState(false);
   // const [totalItems, setTotalItems] = useState(1000);
   // const [pageSize, setPageSize] = useState(50);
   // const [currentPage, setCurrentPage] = useState(0);
@@ -42,13 +42,13 @@ const Product = () => {
   //   ];
   // };
 
-  // const handleOpen = () => {
-  //   setShowProductModal(true);
-  // };
+  const handleOpen = () => {
+    setShowProductModal(true);
+  };
 
-  // const handleClose = () => {
-  //   setShowProductModal(false);
-  // };
+  const handleClose = () => {
+    setShowProductModal(false);
+  };
 
   // const popover = (
   //   <Popover id="popover-basic">
@@ -105,7 +105,7 @@ for (let number = 1; number <= 5; number++) {
     return (
       <S.CardContainer>
         {products.map((item) => (
-          <S.Card>
+          <S.Card key={item.id}>
             <S.CardTitle>{item.name}</S.CardTitle>
             <img
               src={item.image}
@@ -136,7 +136,7 @@ for (let number = 1; number <= 5; number++) {
           </Button>
           {/* </InputGroup.Append> */}
         </InputGroup>
-        <Button onClick={() => {}}>Novo</Button>
+        <Button onClick={handleOpen}>Novo</Button>
       </div>
       <br />
       {/* <Table /> */}
@@ -184,6 +184,26 @@ for (let number = 1; number <= 5; number++) {
 			/> */
       }
       {/* <ProductModal show={showProductModal} handleClose={handleClose} /> */}
+      <Modal
+        show={showProductModal}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          I will not close if you click outside me. Don't even try to press
+          escape key.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Understood</Button>
+        </Modal.Footer>
+      </Modal>
       {/* <Modal
         show={showProductModal}
         onHide={handleClose}
