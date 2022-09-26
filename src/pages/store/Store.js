@@ -1,7 +1,5 @@
-import React from 'react';
+const Store = () => {
+  return <h2>Store</h2>;
+};
 
-export default class Store extends React.Component {
-	render() {
-		return (<h1>Store</h1>);
-	}
-}
+export default Store;

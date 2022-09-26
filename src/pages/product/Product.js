@@ -25,6 +25,7 @@ import { products } from "./ProductRepository";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { ReactSVG } from "react-svg";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [showProductModal, setShowProductModal] = useState(false);
@@ -136,6 +137,7 @@ for (let number = 1; number <= 5; number++) {
           </Button>
           {/* </InputGroup.Append> */}
         </InputGroup>
+
         <Button onClick={handleOpen}>Novo</Button>
       </div>
       <br />

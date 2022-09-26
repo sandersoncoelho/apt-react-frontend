@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import "./Menu.css";
 import * as S from "./styles";
 
@@ -15,9 +15,6 @@ const menuData = [
 
 const Menu = () => {
   const [currentMenuItem, setCurrentMenuItem] = useState();
-  const onClickMenuItem = () => {
-    console.log(this);
-  };
 
   useEffect(() => {
     console.log("tese123");
@@ -37,7 +34,11 @@ const Menu = () => {
 };
 
 const MenuItem = (props) => {
-  const navigate = () => {}; //useNavigate();
+  // const navigate = (to) => {
+  //   console.log("🚀 ~ file: Menu.js ~ line 42 ~ navigate ~ to", to);
+  //   redirect(to);
+  // };
+  const navigate = useNavigate();
 
   const styles = props.active ? "menuItem menuItemActive" : "menuItem";
   return (
